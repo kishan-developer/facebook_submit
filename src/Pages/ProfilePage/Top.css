@@ -1,0 +1,23 @@
+
+
+@media only screen and (max-width: 1200px) {
+
+    /*Tablets [601px -> 1200px]*/
+    .profile_Img .img{
+        max-width: 100%;
+        /* min-width: 80%; */
+        max-height:100px;
+        min-height: 200px;
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    /*Big smartphones [426px -> 600px]*/
+   
+}
+
+@media only screen and (max-width: 425px) {
+    /*Small smartphones [325px -> 425px]*/
+}

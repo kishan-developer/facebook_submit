@@ -1,0 +1,14 @@
+
+
+/* sidebar css */
+
+.sidebar_parent {
+    margin-top: 20px;
+    flex: 0.33;
+    position: sticky;
+    top: 0;
+    width:100%;
+    background-color: yellow;
+   
+}
+

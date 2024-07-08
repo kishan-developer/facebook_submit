@@ -1,0 +1,65 @@
+/*  Post Css */
+
+.post {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.post_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post_topLeft {
+    display: flex;
+    align-items: center;
+}
+
+.postInfo {
+    margin-left: 10px;
+}
+
+.postInfo p {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.postInfo p svg {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+
+/* post middle 
+
+*/
+.post_middle p {
+    margin:20px 0px;
+}
+
+.post_middle img {
+    width: 100%;
+}
+
+
+/* post bottom */
+.post__bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid lightgray;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.post__bottomOptions {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.post__bottomOptions p {
+    margin-left: 5px;
+}

@@ -1,0 +1,58 @@
+
+.widget {
+    margin-top: 30px;
+    margin-right: 10px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.widget__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.widget__bodyOptions:hover {
+
+    cursor: pointer;
+    background-color: gray;
+    transform: translate(10px, 1px);
+    font-size: large;
+    color: white;
+    font-weight: semibold;
+}
+
+.widget__bodyOptions {
+    padding: 2px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.widget__bodyOptions h4 {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.m110 {
+    margin-left: 10px;
+}
+
+.m110 p {
+    font-size: 12px;
+    color: gray;
+}
+
+.m110 svg {
+    font-size: 16px;
+    color: gray;
+    margin-right: 10px;
+}
+
+.widget__headerRight svg{
+    margin:0px 10px
+}

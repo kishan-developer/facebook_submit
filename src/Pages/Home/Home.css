@@ -1,0 +1,141 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    /* background-color: tomato; */
+    padding: 0;
+    /* justify-content: space-between; */
+}
+
+.center_post {
+    /* overflow-y: scroll; */
+    height: 100vh;
+    width: 50%;
+    padding: 0;
+    /* background-color: red; */
+}
+
+.rightsidebar {
+    padding: 10px 50px;
+    height: 100vh;
+    width: 25%;
+    position: fixed;
+    right: 0;
+    top: 5;
+    /* background-color: yellow; */
+}
+
+.sidebar_section {
+    overflow-y: scroll;
+    height: 100vh;
+    width: 25%;
+    position: fixed;
+    left: 0;
+    top: 5;
+    /* background-color: rgb(203, 203, 122); */
+}
+
+/* Media Queries for Responsive Design */
+
+/* Large Devices (Desktops, 1024px and above) */
+@media (min-width: 1024px) {
+    .sidebar_section {
+        overflow-y: scroll;
+        height: 100vh;
+        width: 25%;
+    }
+
+    .rightsidebar {
+        padding: 10px 50px;
+        height: 100vh;
+        width: 25%;
+        /* background-color: yellow; */
+    }
+
+    .center_post {
+        overflow-y: scroll;
+        height: 100vh;
+        width: 50%;
+        padding: 0;
+        /* background-color: red; */
+    }
+}
+
+/* Medium Devices (Tablets, 768px and above) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .sidebar_section {
+        /* background-color: red;
+            overflow-y: scroll;
+            height: 100vh;
+            width: 25%; */
+        display: none;
+    }
+
+    .rightsidebar {
+        display: none;
+        /* background-color: yellow; */
+        /* padding: 10px 50px;
+        height: 100vh;
+        width: 40%; */
+    }
+
+    .center_post {
+        /* background-color: green; */
+        overflow-y: scroll;
+        height: 100vh;
+        min-width: 60%;
+
+        padding: 0;
+        /* background-color: red; */
+    }
+}
+
+/* Small Devices (Mobile Phones, 767px and below) */
+@media (max-width: 767px) {
+    .sidebar_section {
+        display: none;
+    }
+
+    .rightsidebar {
+        /* background-color: purple;
+            padding: 10px 50px;
+            height: 100vh;
+            width:35%; */
+        display: none;
+        /* background-color: yellow; */
+    }
+
+    .center_post {
+        /* background-color: brown; */
+        overflow-y: scroll;
+        height: 100vh;
+        width: auto;
+        padding: 0;
+        /* background-color: red; */
+    }
+}
+
+@media (max-width: 630px) {
+    .sidebar_section {
+        display: none;
+    }
+
+    .rightsidebar {
+        display: none;
+        /* background-color: purple;
+        padding: 10px 50px;
+        height: 100vh;
+        width: 35%; */
+        /* background-color: yellow; */
+    }
+
+    .center_post {
+        /* background-color: brown; */
+        overflow-y: scroll;
+        height: 100vh;
+        width: auto;
+        padding: 0;
+        /* background-color: red; */
+    }
+}

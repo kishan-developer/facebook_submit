@@ -1,0 +1,49 @@
+
+.loginForm {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px auto;
+    background-color: rgb(70, 70, 194);
+
+}
+.form_container {
+    width:350px;
+    /* background-color: whitesmoke; */
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+
+.form input {
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    border: 2px solid rgb(207, 204, 204);
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 1rem;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+p {
+    font-size: small;
+}
+
+.error_message {
+    color: red;
+}
+
+@media only screen and (max-width:600px){
+    p {
+        /* background-color: red; */
+        font-size: small;
+    }
+
+    .btn {
+        font-size: small;
+    }
+}
