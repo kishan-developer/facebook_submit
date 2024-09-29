@@ -10,6 +10,8 @@ function Posts() {
 
   const { useAllData, setUserAllData } = useThemeContextValue()
 
+  console.log("useAllData Posts Componenct ", useAllData);
+
   return (
     <div className="posts">
       <div className="left_child_posts ">
@@ -22,7 +24,7 @@ function Posts() {
       </div>
       <div className="right_child_posts">
         {/* Userpost */}
-        <UserPosts useAllData={useAllData?.data?._id}/>
+        <UserPosts currentUserID={useAllData?.data?._id}/>
       </div>
 
     </div>

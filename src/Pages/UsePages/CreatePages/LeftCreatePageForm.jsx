@@ -11,6 +11,12 @@ function LeftCreatePageForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert("form submitted");
+        console.log({
+            pageName,
+            pageProfileImg,
+            pageCategory,
+            pageBio
+        })
     }
 
     const handleChangeImg =(event)=> {

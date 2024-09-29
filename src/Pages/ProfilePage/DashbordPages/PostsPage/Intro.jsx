@@ -41,9 +41,9 @@ function Intro() {
   }
 
 
-  useEffect(() => {
-    getUserPersonalData();
-  }, []);
+  // useEffect(() => {
+  //   getUserPersonalData();
+  // }, []);
 
   return (
     <div className="bg-white min-h-[auto] rounded-md p-5">

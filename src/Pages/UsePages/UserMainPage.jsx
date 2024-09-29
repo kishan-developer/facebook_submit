@@ -9,4 +9,4 @@ function UserMainPage() {
   )
 }
 
-export default UserMainPage
+export default UserMainPage;

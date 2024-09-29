@@ -59,7 +59,7 @@ function LoginForm() {
             const response = await fetch("https://academics.newtonschool.co/api/v1/user/login", requestOptions);
             const result = await response.json();
             if(result.status==="success"){
-                localStorage.setItem("token", JSON.stringify(result.token));
+                localStorage.setItem("token", result.token);
                 localStorage.setItem("User_Details", JSON.stringify(result.data));
                 setUserDetails(result.data)
                 setAuthCheck(true);

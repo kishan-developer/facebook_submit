@@ -5,18 +5,25 @@ import { Avatar, IconButton } from '@material-ui/core';
 import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
 import ProfileNav from './ProfileNav';
+import { useThemeContextValue } from '../../Utils/context/ThemeContext';
 
-function Top({ useAllData }) {
+function Top({ currentUserDetails }) {
 
-    console.log("userData", useAllData?.owner?._id);
+   
+
+    const { searchData, setSearchData } = useThemeContextValue();
+
+    // console.log("searchData", searchData)
+
+    localStorage.setItem("currentProfileName",currentUserDetails?.data?.name)
 
     return (
         <>
             <div className="profile_Img">
                 <img
                     className="img"
-                    src="https://scontent.flko7-3.fna.fbcdn.net/v/t39.30808-6/289597094_1065976217681761_5887996559628257992_n.jpg?stp=dst-jpg_p180x540&_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=tHhUH3kd2LYQ7kNvgEaCvOa&_nc_ht=scontent.flko7-3.fna&oh=00_AYDftFSTQGflNqLc_ZWSdX3PKajmbrGncMYN28FsEsAN9Q&oe=6681FFED"
-                    alt="profile_img"
+                    src="../../Img/img.png"
+                    alt="profile_imgs"
                 />
 
 {/* 
@@ -32,14 +39,16 @@ function Top({ useAllData }) {
             <div className="profile_links">
                 <div className="profile_links_parent_child  flex flex-cal gap-5 w-full">
                     <div className="left_child w-1/2  ">
+
+                    {/* {} */}
                         <Avatar
                             className="top_p "
                             
-                            src={useAllData?.data?.image}
+                            src={currentUserDetails?.data?.image}
                         />
 
                         <div className="user_details ">
-                            <h2 className="user_name font-bold text-[1.8rem] md:text-[1.5rem] sm:text-[1rem]">{useAllData?.data?.name}</h2>
+                            <h2 className="user_name font-bold text-[1.8rem] md:text-[1.5rem] sm:text-[1rem]">{currentUserDetails?.data?.name}</h2>
                             
                         </div>
                     </div>

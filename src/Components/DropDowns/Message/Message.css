@@ -10,13 +10,15 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    
 }
 
 .massage {
     position: absolute;
     top: 4rem;
     right: 2rem;
-    background-color: red;
+    background-color: lightgray;
     height: 200px;
     width: 300px;
+    border-radius: 10px;
 }

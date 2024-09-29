@@ -61,9 +61,10 @@ function Header() {
 
         <FacebookIcon onClick={() => navigate('/')} fontSize="large" className="text-blue-500" />
 
-        <div className="header_search">
+        <div className="header_search ">
           <SearchIcon onClick={() => navigate('/searchpage')} />
           <input
+            className="hidden xl:block lg:block md:block sm:block"
             onClick={handleSearch}
             type="text"
             placeholder="Search Facebook"

@@ -1,12 +1,22 @@
 import React from 'react';
+import { useThemeContextValue } from '../../../../Utils/context/ThemeContext';
+
 
 function p2() {
+
+  const { useAllData, setUserAllData, currentUserDetails } = useThemeContextValue()
     
   return (
-    <div>
-      <h2 className="font-bold text-[1.3rem] mb-5 ">Work</h2>
-      <h2 className="font-bold text-[1.2rem] ml-5">Education</h2>
-    </div>
+    <section >
+      <h2>Work</h2>
+      <div>
+        <p>companyName : {currentUserDetails?.data?.owner?.workExperience[0]?.companyName}</p>
+        <p>description : {currentUserDetails?.data?.owner?.workExperience[0]?.description}</p>
+        <p>designation : {currentUserDetails?.data?.owner?.workExperience[0]?.designation}</p>
+        <p>location    : {currentUserDetails?.data?.owner?.workExperience[0]?.location}</p>
+        {/* <p>zipCode : {currentUserDetails?.data?.owner?.address[0]?.zipCode}</p> */}
+      </div>
+    </section>
   )
 }
 

@@ -38,7 +38,7 @@ function ProfileNav() {
 
     return (
         <div className="profile_Nav flex flex-row justify-between items-center ">
-            <div className="links w-full flex flec-row bg-yellow-300">
+            <div className="links w-full flex flec-row ">
                 {navlist.map((item, index) => (
                     <button
                         key={index}

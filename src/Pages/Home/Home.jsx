@@ -25,7 +25,7 @@ function Home() {
         <>
             { authCheck ? (
                 <div className="main w-full " >
-                    <div className="sidebar_section ">
+                    <div className="sidebar_section no-scrollbar">
                         <Sidebar />
                     </div>
                     <div className="center_post no-scrollbar overflow-auto">

@@ -7,14 +7,19 @@ import { useNavigate } from 'react-router-dom';
 import { useThemeContextValue } from '../../Utils/context/ThemeContext';
 
 function Pages() {
-    const { getAllpageFun, pagesData, setPagesData } = useThemeContextValue();
+    const { getAllpageFun, pagesData, setPagesData, currentUserID, setCurrentUserId, getCurrentUserDetailsFunc } = useThemeContextValue();
     const navigate = useNavigate();
 
-    console.log("pagesData", pagesData)
+    // console.log("pagesData", pagesData)
     
     const handleViewButton = (data)=> {
-        alert(data?._id)
-        // this data getting in profile page 
+
+        // getCurrentUserDetailsFunc(data?._id);
+        // console.log("view button data ", data);
+        alert(data?._id)  // current user id 
+        setCurrentUserId(data?._id);  // set the current user id in state 
+        getCurrentUserDetailsFunc(data?._id)
+        //use the current user id to get the user personal data in { show in profile page } 
         localStorage.setItem("current_page_User_ID", data?._id);
         navigate('/profile')
     }
@@ -29,6 +34,8 @@ function Pages() {
                 <h2 className="text-[2rem] font-bold ">All Pages</h2>
                 <div className=" grid grid-cols-1  xl:gap-10 lg:gap-10 gap-5 xl:py-5 lg:py-5 md:py-2 py-0 xl:px-10 lg:px-10 md:px-5 px-[0rem]">
 
+
+                        {/* //all user data */}
                     {
                         pagesData?.data?.map((data, index) => (
                             <div key={index} className="w-[100%] h-[auto]  flex flex-col rounded-md bg-white px-5 py-2">
@@ -48,6 +55,7 @@ function Pages() {
                                         </IconButton>
                                         view page
                                     </button>
+
                                     <button className="xl:px-[5rem] lg:px-[5rem] md:px-[2rem] sm:px-[1rem] px-[0.5rem] bg-gray-300 text-blue-600 rounded-md">
                                         <IconButton>
                                             <VolumeUpIcon />

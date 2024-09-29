@@ -10,15 +10,19 @@ import VideoCallIcon from '@material-ui/icons/VideoCall';
 import { useThemeContextValue } from '../Utils/context/ThemeContext';
 // import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 
-function MessageSender() {
+function MessageSender({ fetchPost }) {
     const [open, setOpen] = useState(false);
     const { postTitle, setPostTitle, postImg, setPostImg } = useThemeContextValue();
     const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
     const [postImgBinary, setPostImgBinary] = useState(null);
 
+    const user_details = JSON.parse(localStorage.getItem("User_Details"));
+    console.log(user_details?.user?.name);
+
     console.log("postImg", postImg);
     console.log("postTitle", postTitle);
 
+    // handle image change 
     const handleImageChange = (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -48,6 +52,9 @@ function MessageSender() {
             console.error('Error:', error);
         }
     };
+
+
+    // add new post fun
     const AddNewPostFun = async()=> {
         alert("Add new post fun ")
         const token = localStorage.getItem("token");
@@ -76,17 +83,22 @@ function MessageSender() {
         };
 
         try {
-            const response = await fetch("https://academics.newtonschool.co/api/v1/facebook/post/", requestOptions);
+            const response = await fetch("https://academics.newtonschool.co/api/v1/facebook/post/",requestOptions);
             if (!response.ok) {
                 const errorText = await response.json();
                 throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
             }
             const result = await response.json();
-            alert("rresult", result.status);
-            // Reset the state after successful post
+            console.log("add post fun : ",result)
+           
+            if(result.status){
+                fetchPost();
+            }
+
             setPostTitle('');
             setPostImg(null);
             setOpen(false);
+            
         } catch (error) {
             console.error('Error:', error);
         }
@@ -117,7 +129,7 @@ function MessageSender() {
 
                         <div className="modalHeader__top">
                             <Avatar />
-                            <h5>Anand</h5>
+                            <h5>{user_details?.user?.name}</h5>
                         </div>
 
                         <div className="modalBody">

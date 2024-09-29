@@ -4,7 +4,8 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { Avatar } from '@material-ui/core';
 import PublicIcon from '@material-ui/icons/Public';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline'; import ShareIcon from '@material-ui/icons/Share';
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline'; 
+import ShareIcon from '@material-ui/icons/Share';
 import {useThemeContextValue} from '../Utils/context/ThemeContext'
 import PostComments from './PostComment/PostComments';
 import PostEdit_Detete from '../Components/PostComponent/PostEdit_Delete';
@@ -19,6 +20,8 @@ function Post({ data }) {
     const { model, setModel, postComments, setPostComments, comment, getUserFilterData } = useThemeContextValue();
     const [isModalOpen, setIsModalOpen] = useState(false);
     
+    localStorage.setItem("userName", data?.author?.name);
+
 
     // console.log("post component data", data)
     // const props = { "id": id, "photoURL": photoURL , "image": image , "username":username, "timestamp": timestamp , "message":message, "like":like, "commentCount": commentCount }

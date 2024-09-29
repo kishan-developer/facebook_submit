@@ -7,7 +7,14 @@ import TheatersIcon from '@mui/icons-material/Theaters';
 import StarIcon from '@mui/icons-material/Star';
 import CampaignIcon from '@mui/icons-material/Campaign';
 
+
 function Create() {
+
+
+
+    const handleCreatePage =()=> {
+        // navigate('/createpage');
+    }
     return (
         <div className="flex flex-col gap-3 ">
             <div className="flex flex-row gap-2 cursor-not-allowed items-center ">
@@ -22,13 +29,12 @@ function Create() {
                 </div>
             </div>
 
-            <div className="flex flex-row items-center gap-2 cursor-pointer">
+            <div className="flex flex-row items-center gap-2 cursor-pointer" onClick={handleCreatePage}>
                 <IconButton>
                     <FlagIcon />
                 </IconButton>
-                <div className="flex flex-col ">
+                <div className="flex flex-col">
                     <p className="text-md font-bold">Create Page</p>
-
                 </div>
             </div>
 

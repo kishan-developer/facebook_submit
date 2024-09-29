@@ -36,12 +36,12 @@ function Feed() {
     console.log("postData", postData)
     
     return (
-        <div className="feed ">
+        <div className="feed no-scrollbar">
             {/* StoryReels */}
             <StoryReel />
 
             {/* Message Sender */}
-            <MessageSender />
+            <MessageSender fetchPost={fetchPost} />
             {/* Post */}
 
             {

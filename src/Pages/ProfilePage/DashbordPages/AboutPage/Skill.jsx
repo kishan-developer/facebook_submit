@@ -1,8 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { useThemeContextValue } from '../../../../Utils/context/ThemeContext';
 
 function Skill() {
+  const { useAllData, setUserAllData, currentUserDetails } = useThemeContextValue()
+
   return (
-      <h2 className="font-bold text-[1.3rem] mb-5 ">Skills</h2>
+    <section >
+      <h1>Skills </h1>
+      <div>
+
+        <ul>
+          {currentUserDetails?.data?.owner?.skills?.map((data , i)=> (
+            <li key={i}>{data}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
   )
 }
 

@@ -11,10 +11,14 @@ import { useThemeContextValue } from '../../Utils/context/ThemeContext';
 function Profile() {
 
 
-  const { useAllData, setUserAllData } = useThemeContextValue()
+  const { useAllData, setUserAllData, currentUserDetails } = useThemeContextValue()
 
-  const userId = localStorage.getItem("current_page_User_ID");
-  console.log("userId",  userId)
+  localStorage.setItem("currentUserDetails", currentUserDetails)
+
+  console.log("currentUserDetails", currentUserDetails)
+
+  const userIds = localStorage.getItem("current_page_User_ID");
+  console.log("userId",  userIds)
 
   // console.log("current page data profile page ",JSON.parse(data));
 
@@ -23,34 +27,38 @@ function Profile() {
 
   // using owner id get the all user data 
 
-  function getUserAllData(userId) {
-    console.log("userId",  userId);
-    const myHeaders = new Headers();
-    myHeaders.append("projectId", "ywl8a606ax3d");
+  // function getUserAllData(authorId) {
+  //   alert("getUserAllData");
+  //   console.log("getUserAllData authorId", authorId);
 
-    const requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow"
-    };
+  
 
-    fetch(`https://academics.newtonschool.co/api/v1/facebook/channel/${userId}`, requestOptions)
-      .then((response) => response.json())
-      .then((result) => setUserAllData(result))
-      .catch((error) => console.error(error));
-  }
+  //   const myHeaders = new Headers();
+  //   myHeaders.append("projectId", "ywl8a606ax3d");
 
-  console.log("useAllData : ",useAllData);
+  //   const requestOptions = {
+  //     method: "GET",
+  //     headers: myHeaders,
+  //     redirect: "follow"
+  //   };
 
-  useEffect(() => {
-    getUserAllData(userId);
-  }, []);
+  //   fetch(`https://academics.newtonschool.co/api/v1/facebook/channel/${authorId}`, requestOptions)
+  //     .then((response) => response.json())
+  //     .then((result) => console.log("---------",result))
+  //     .catch((error) => console.error(error));
+  // }
+
+  console.log("useAllData  profile: ", useAllData);
+
+  // useEffect(() => {
+  //   getUserAllData(userIds);
+  // }, []);
 
 
   return (
     <div className="profile">
       <div className="profile_Page">
-        <Top useAllData={useAllData}/>
+        <Top currentUserDetails={currentUserDetails}/>
       </div>
       <div className="profile_Page_bottom mt-[1%]">
         <div className="profile_Page_bottom_child">

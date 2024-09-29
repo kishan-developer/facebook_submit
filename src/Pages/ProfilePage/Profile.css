@@ -83,7 +83,7 @@
 /*  bottom page styles */
 
 .profile_Page_bottom {
-    background-color: #9e7a7a;
+    /* background-color: #9e7a7a; */
     width: auto;
     /* height: 100vh; */
     padding: 0px 12rem;
@@ -193,7 +193,7 @@
     }
 
     .profile_Page_bottom_child {
-        background-color: rgb(162, 54, 54);
+        /* background-color: rgb(162, 54, 54); */
         width: auto;
         /* height: 100vh; */
         /* padding: 15px 20px; */

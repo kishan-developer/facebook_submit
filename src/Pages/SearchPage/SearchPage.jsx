@@ -8,9 +8,13 @@ import SePageSidebar from './SearchCom/SePageSidebar';
 import Peoples from './SearchCom/Peoples';
 
 function SearchPage() {
-  const { searchData, setSearchData } = useThemeContextValue();
+  const { searchData, setSearchData, useralldetails, setuseralldetails, useAllData } = useThemeContextValue();
 
   console.log("searchData",searchData);
+
+  console.log("useralldetails", useralldetails);
+
+  console.log("useAllData", useAllData);
 
   return (
     <div className="searchpage_parent h-full">
@@ -23,14 +27,13 @@ function SearchPage() {
           searchData ? (
             searchData.map((data, index) => (
               <div key={index}>
-                
                 <Post data={data} />
               </div>
             ))
           ) : (
             <div className="w-full h-full flex flex-col justify-center items-center font-semibold text-[2rem]">
                 <h1>Data is Comming Soon🙂...</h1>
-              <p>if you not gatting any data than go to search input and get the data..</p>
+                <p>if you not gatting any data than go to search input and get the data..</p>
                 <p>thank You🙏🙂....</p>
             </div>
           )
